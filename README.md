@@ -66,27 +66,29 @@ API_KEY=your_accuweather_api_key
 To use the AccuWeather API, you need an API key. You can get one by signing up on the AccuWeather website. Once you have the API key, add it to your .env file as described in the Configuration section.
 
 ### File Structure
-- app.py: The main application file that contains the logic for fetching weather data and - 
+   - app.py: The main application file that contains the logic for fetching weather data and - 
   rendering the UI.
-- styles.css: Contains the CSS for the neomorphic design of the UI.
-- .env: Contains the environment variables, specifically the AccuWeather API key.
+   - styles.css: Contains the CSS for the neomorphic design of the UI.
+   - .env: Contains the environment variables, specifically the AccuWeather API key.
 ### Key Components
-    - app.py: This file contains the Flask application setup and the route to fetch and display weather data.
-    - styles.css: This file contains the styling for the neomorphic UI, including classes for different elements such as the weather card, temperature display, and more.
+   - app.py: This file contains the Flask application setup and the route to fetch and display weather data.
+   - styles.css: This file contains the styling for the neomorphic UI, including classes for different elements such as the weather card, temperature display, and more.
 
 ## Examples
 Here are some examples of how the application looks and works:
 
-    = Enter a location in the search bar to get the current weather conditions.
-    - The weather card will display the temperature, condition, and location with a modern neomorphic design.
+   - Enter a location in the search bar to get the current weather conditions.
+   - The weather card will display the temperature, condition, and location with a modern neomorphic design.
+
 ## Troubleshooting
 If you encounter any issues, consider the following troubleshooting steps:
 
-    - Ensure that your AccuWeather API key is correctly set in the .env file.
-    - Check if all required dependencies are installed by running pip install -r requirements.txt.
-    - Verify that the Flask server is running and accessible at http://localhost:5000.
+   - Ensure that your AccuWeather API key is correctly set in the .env file.
+   - Check if all required dependencies are installed by running pip install -r requirements.txt.
+   - Verify that the Flask server is running and accessible at http://localhost:5000.
+
 ## Contributors
-    - Sayan Golder(#sayangolder2004@gmail.com) 
+   - Sayan Golder(#sayangolder2004@gmail.com) 
 ## License
 This project is licensed under the MIT License.
 
