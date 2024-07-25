@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeumoWeather</title>
+    <script src="https://kit.fontawesome.com/518b5eb9cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-card neomorphism-out">
+            <span class="title">NeumoWeather</span>
+            <div class="weather-info neomorphism-in">
+                {% if weather %}
+                    <img class="weather-icon" id="weather-icon" src="static/animation-ready/{{ weather['IconPhrase'] }}.svg" alt="Weather Icon">
+                    <div class="condition neomorphism-out">{{ weather['IconPhrase'] }}</div>
+                    <div class="temperature neomorphism-out">
+                        <p>{{ weather['Temperature']['Value'] | int }}</p><img class="celsius" src="static/animation-ready/celsius.svg" >
+                    </div>
+                    <span class="location neomorphism-out">
+                        {% if city %}
+                            {{ city }} <i class="fa-solid fa-location-dot"></i>
+                        {% endif %}
+                    </span>
+                {% else %}
+                    <div class="inst neomorphism-out">Please Enter Location!</div>    
+                {% endif %}
+                {% if error %}
+                    <div class="error">{{ error }}</div>
+                {% endif %}
+            </div>
+            <form action="/" method="POST">
+                <label for="city">
+                    <input class="neomorphism-in" type="text" id="city" name="loc" placeholder="Enter city name">
+                </label>
+                <button class="neomorphism-out" type="submit">Get Weather</button>
+            </form>
+            <div class="more-info neomorphism-in">
+                {% if weather %}
+                    <div class="info neomorphism-out">
+                        <img class="more-icon" src="static/animation-ready/humidity.svg" alt="Humidity Icon">
+                        Humidity: {{ weather['RelativeHumidity'] }}%
+                    </div>
+                    <div class="info neomorphism-out">
+                        <img class="more-icon" src="static/animation-ready/wind.svg" alt="Wind Icon">
+                        <div>Wind {{ weather['Wind']['Direction']['English'] }} : {{ weather['Wind']['Speed']['Value'] | int }} Km/h</div>
+                    </div>
+                    <div class="info neomorphism-out">
+                        <img class="more-icon" src="static/animation-ready/rain.svg" alt="Rain Icon">
+                        Rain Probability: {{ weather['RainProbability'] | int }}%
+                    </div>
+                    <div class="info neomorphism-out">
+                        Visibility: {{ weather['Visibility']['Value'] | int }} km
+                    </div>
+                    <div class="info neomorphism-out">
+                        <img class="more-icon" src="static/animation-ready/uv-index{{ weather['UVIndex'] | int }}.svg" alt="UV Index Icon">
+                        UV: {{ weather['UVIndex'] | int }}
+                    </div>
+                    <div class="info neomorphism-out">
+                        <img class="more-icon" src="static/animation-ready/thermometer.svg" alt="Thermometer Icon">
+                        Feels Like: {{ weather['RealFeelTemperature']['Value'] | int }}°C
+                    </div>
+                {% else %} 
+                    <div class="inst neomorphism-out">Nothing to Show</div>       
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
