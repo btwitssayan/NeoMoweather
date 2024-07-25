@@ -23,3 +23,11 @@ To install and run the NeoMoweather application, follow these steps:
    ```bash
    git clone https://github.com/yourusername/neomoweather.git
    cd neomoweather
+   ```
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+   ``` 
+   
+   
